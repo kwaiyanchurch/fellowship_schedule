@@ -1,12 +1,24 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { FellowshipBox } from './fellowship-box';
 
 @Injectable()
 export class ApiService {
-	configUrl = 'assets/config.json';
-	constructor(private http: HttpClient) { }
-	
-	getConfig() {
-		return this.http.get(this.configUrl);
-	}
+
+  fellowshipBoxes: FellowshipBox[] = [
+  	{
+	  id: "222",
+	  name: "nnnn"
+  	},
+  	{
+	  id: "11",
+	  name: "bb"
+  	}
+  	];
+  	
+  constructor() { }
+  
+  getFellowshipBoxes(): FellowshipBox[] {
+  
+  	return this.fellowshipBoxes;
+  }
 }

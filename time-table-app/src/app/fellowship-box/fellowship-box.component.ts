@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FellowshipBox } from '../fellowship-box';
+import { ApiService } from './../api.service';
 
 @Component({
   selector: 'app-fellowship-box',
@@ -8,25 +9,19 @@ import { FellowshipBox } from '../fellowship-box';
 })
 export class FellowshipBoxComponent implements OnInit {
   selectedFellowship: FellowshipBox;
+  fellowshipBoxes : FellowshipBox[];
   
-  fellowshipBoxes: FellowshipBox[] = [
-  {
-	  id: "222",
-	  name: "vv"
-  },
-  {
-	  id: "11",
-	  name: "bb"
-  }
-  ];
-  
-  constructor() { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
+  	this.getApi();
   }
   
   onSelect(selectedFellowship: FellowshipBox): void {
 	this.selectedFellowship = selectedFellowship;
   }
-		
+  
+  getApi(): void {
+  	this.fellowshipBoxes = this.apiService.getFellowshipBoxes();
+  }	
 }

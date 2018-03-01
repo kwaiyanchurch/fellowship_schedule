@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { FellowshipBoxComponent } from './fellowship-box/fellowship-box.component';
 
+import { ApiService } from './api.service';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,9 @@ import { FellowshipBoxComponent } from './fellowship-box/fellowship-box.componen
     BrowserModule,
 	HttpClientModule
   ],
-  providers: [],
+  providers: [
+    ApiService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
