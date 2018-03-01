@@ -1,0 +1,20 @@
+<div>
+	<ul class="fellowshipBoxes">
+		<li *ngFor="let fellowshipBox of fellowshipBoxes"
+			[class.selected]="fellowshipBox === selectedFellowship"		
+			(click)="onSelect(fellowshipBox)">
+			<span class="badge">{{fellowshipBox.id}}</span> {{fellowshipBox.name}}
+		</li>
+	</ul>
+</div>
+
+<div *ngIf="selectedFellowship">
+	<h2>{{ selectedFellowship.name | uppercase }} Details</h2>
+	<div><span>id: </span>{{selectedFellowship.id}}</div>
+	<div>
+	  <label>name:
+		{{selectedFellowship.name}}
+	  </label>
+	</div>
+</div>
+
