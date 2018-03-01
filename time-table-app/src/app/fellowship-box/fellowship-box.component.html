@@ -3,8 +3,7 @@
 		<li *ngFor="let fellowshipBox of fellowshipBoxes"
 			[class.selected]="fellowshipBox === selectedFellowship"		
 			(click)="onSelect(fellowshipBox)">
-			<span class="badge">{{fellowshipBox.id}}</span> {{fellowshipBox.name}}
-		</li>
+			<span class="badge">&nbsp;</span>{{fellowshipBox.name}}</li>
 	</ul>
 </div>
 
